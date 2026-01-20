@@ -125,7 +125,9 @@
 
             <!-- DERECHA: formulario -->
             <div class="contacto-formulario">
-                <form action="#" method="POST">
+                <form name="contacto" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="contacto">
+                    
                     <label for="nombre">Nombre</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
 
