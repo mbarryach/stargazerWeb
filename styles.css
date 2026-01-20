@@ -181,9 +181,13 @@ p {
 
 /* Layout flexible */
 .about-me-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    /* display: flex;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    /* align-items: flex-start; */
+    align-items: center;
     max-width: 1200px;
     margin: auto;
     gap: 40px;
@@ -191,8 +195,10 @@ p {
 
 /* Texto */
 .about-me-text {
-    flex: 1;
+    grid-column: 1;
+    grid-row: 1;
     min-width: 300px;
+
 }
 
 .about-me-text h2 {
@@ -207,9 +213,9 @@ p {
     line-height: 1.4;
 }
 
-.about-me-text .btn {
-    display: inline-block;
-    margin-top: 25px;
+.about-me-container .btn {
+    grid-column: 1;
+    grid-row: 2;
     padding: 12px 30px;
     text-decoration: none;
     cursor: pointer;
@@ -222,16 +228,15 @@ p {
     box-shadow: 0 10px 30px rgba(155, 24, 4, 0.4);
 }
 
-.about-me-text .btn:hover {
+.about-me-container .btn:hover {
     transform: scale(1.08);
     box-shadow: 0 0px 40px rgba(255, 60, 31, 0.6);
 }
 
 /* Imagen */
 .about-me-image {
-    flex: 1;
-    min-width: 300px;
-    position: relative;
+    grid-column: 2;
+    grid-row: 1 / span 2;
 }
 
 .about-me-image img {
@@ -433,7 +438,7 @@ footer p{
 @media (max-width: 768px) {
 
     .beats-section {
-        padding: 7rem 0;
+        padding: 5rem 0;
     }
     .beats-item {
         flex-direction: column;
@@ -450,16 +455,16 @@ footer p{
     }
 
     .titulo {
-        font-size: clamp(3rem, 12vw, 5rem);
-        bottom: 55%;
+        font-size: clamp(6rem, 12vw, 5rem);
+        bottom: 50%;
     }
 
     .icon-list {
-        margin-top: 1.5rem;
+        margin-top: 2.5rem;
     }
 
     .angulo-hacia-abajo {
-        bottom: 10%;
+        bottom: 0%;
         width: 30px;
     }
 
@@ -468,8 +473,11 @@ footer p{
     }
 
     .about-me-container {
-        flex-direction: column;
+        display: flex;
         text-align: center;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
     }
 
     .about-me-text .intro {
@@ -481,7 +489,24 @@ footer p{
         margin: 0 auto;
     }
 
-        .contacto {
+    .about-me-image{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .about-me-container .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background: var(--gradient-main);
+        color: var(--text-light);
+        border-radius: 30px;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .contacto {
         padding: 4rem 1.5rem;
     }
 
