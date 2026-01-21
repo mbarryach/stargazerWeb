@@ -28,7 +28,7 @@ body {
 }
 
 /* FONTS */
-h2, h3, h4, h5, p {
+h2, h3, h4, h5, p, li {
     font-family: "Zalando Sans Expanded", sans-serif;
     letter-spacing: -0.06em;
 }
@@ -337,13 +337,13 @@ iframe{
     color: var(--primary-color);
 }
 
-.contacto-info p {
+.contacto-info p, li {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
     color: var(--text-light);
 }
 
-.datos-contacto p {
+.datos-contacto li {
     display: flex;
     align-items: center;
     gap: 0.8rem;
